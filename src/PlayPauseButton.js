@@ -6,6 +6,7 @@ export function PlayPauseButton() {
 
   return (
     <button
+      className="button"
       onClick={() => {
         dispatch(playPause());
       }}
