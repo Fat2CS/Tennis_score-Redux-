@@ -1,4 +1,5 @@
 import { legacy_createStore as createStore } from "redux";
+import produce from "immer";
 // Le state
 const initialState = {
   // Le score de chacun des joueurs
@@ -37,15 +38,17 @@ function reducer(state, action) {
     // on retourne le state initial
     return initialState;
   }
+
   // si l'action est de type "playPause"
   if (action.type === "playPause") {
+    return produce(state, (draft) => {
+      draft.playing = !draft.playing;
+    });
     // on retourne un nouvel objet
-    return {
-      // qui est une copie du state
-      ...state,
-      // mais on replace la propriété playing
-      playing: !state.playing
-    };
+
+    // qui est une copie du state
+
+    // mais on replace la propriété playing
   }
   // lorsqu'un joueur marque un point
   if (action.type === "pointScored") {

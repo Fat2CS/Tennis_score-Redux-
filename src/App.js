@@ -1,5 +1,5 @@
 import { PlayPauseButton } from "./PlayPauseButton";
-import { Display } from "./Display";
+import { Display } from "./Displays";
 import { ResetButton } from "./ResetButton";
 import { PointScoredButton } from "./PointScoredButton";
 
